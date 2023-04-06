@@ -1,0 +1,16 @@
+<odoo>
+  <data>   
+
+      <record id="view_crm_lead_form_inherit" model="ir.ui.view">
+        	<field name="name">Crm Lead Custom</field>
+        	<field name="model">crm.lead</field>
+          <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+        	<field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_name']" position="after">
+              <field name="countries" />
+            </xpath>
+        	</field>
+      </record>  
+  
+  </data>
+</odoo>

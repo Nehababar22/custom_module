@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data> 
+    
+        <template id="custom_contactus_form" inherit_id="website.contactus" name="Custom Contactus">
+            <xpath expr="//form/div[6]"  position="after">
+                <div class="form-group row form-field o_website_form_required_custom">
+                    <label class="col-lg-3 col-form-label" for="countries">Your Country</label>           
+                    <div class="col-lg-7 ">
+                        <select name="countries" id="countries" class="form-control o_website_form_input" required="true" >
+                        <option value="">Country...</option>
+                        <t t-foreach="countries" t-as="country" >
+                            <option t-att-value="country.name" t-esc="country.name" name="countries.names"/>
+                        </t>
+                        </select>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="custom_contactus_form_1" inherit_id="website.contactus" name="Custom Contactus">
+            <xpath expr="//form/div[3]"  position="replace">
+                <div class="form-group row o_website_form_required_custom">
+                    <label class="col-lg-3 col-form-label" for="email_from"> Your Business Email</label>
+                    <div class="col-lg-7 ">
+                        <input type="text" class="form-control o_website_form_input" name="email_from" required="true" />
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
